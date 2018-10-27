@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+</head>
+
+<body ng-app="App">
+
+<div  ng-controller="BlogCtrl">
+
+<div>
+
+<div class="container">
+<form class="form-horizontal">
+  <div class="form-group">
+  <label for="title">Blog Title:</label>
+<div class="col-sm-4">
+<input ng-model="title" class="form-control" placeholder="enter title"/>
+</div>
+ <div class="form-group">
+ <label class="col-sm-offset-2 control-label col-sm-2" for="description">Blog Description:</label>
+<div class="col-sm-4">
+ <input ng-model="description" class="form-control" placeholder="enter description" />
+</div>
+ <div class="form-group">
+ <label for="writtenby">Blog Writtenby:</label>
+ <div class="col-sm-4">
+ <input ng-model="writtenby" class="form-control" placeholder="enter name" />
+</div>
+<div class="form-group">
+<label for="date">Blog Date:</label>
+ <div class="col-sm-4">
+ <input ng-model="date_blog" class="form-control" placeholder="enter date"/>
+</div>
+<div class="form-group">
+<label for="brief">Blog Brief:</label>
+<div class="col-sm-4">
+ <input ng-model="brief" class="form-control" placeholder="enter brief" />
+</div>
+</div>
+<input type="button"  class="btn btn-default" value="Send" ng-click="postBlog(title, description, writtenby,date_blog,brief)" /> <br/><br/>
+</form>
+</div>
+
+<p>Output Message : {{msg}}</p>
+
+<p>StatusCode: {{statusval}}</p>
+
+<p>Status: {{statustext}}</p>
+
+<p>Response Headers: {{headers}}</p>
+
+</div>
+<div ng-controller="myblog"></div>
+<li ng-repeat="d in data">
+{{'name='+d.writtenby}}
+</body>
+
+</html>
